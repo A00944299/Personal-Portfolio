@@ -1,0 +1,22 @@
+{
+  "name": "lab04_repo",
+  "version": "1.0.0",
+  "description": "comp1930 project 01 lab04 excercise group project",
+  "main": "indexjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seung2613/lab04_repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seung2613/lab04_repo/issues"
+  },
+  "homepage": "https://github.com/seung2613/lab04_repo#readme",
+  "dependencies": {
+    "firebaseui": "^3.4.1"
+  }
+}
