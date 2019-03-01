@@ -1,0 +1,528 @@
+@import url(https://fonts.googleapis.com/css?family=Sura);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+html, body {
+  background-color: #DCDCDC;
+	margin: 0px;
+	padding: 0px;
+}
+
+div header {
+	height: auto;
+}
+
+@media screen and (max-width:1536px) {
+
+  ELEMENTS, {
+    width:100%;
+		}
+
+	#menu {
+  	background-color: white;
+		width: auto;
+  	margin-top: 50px;
+		border: lightgrey solid 2px;
+		}
+
+	#navbar {
+  	float: right;
+		display: table;
+		font-family: Sura;
+		font-size: 14px;
+		position: relative; transform: translate(0, -45px);
+		width: 300px;
+		margin-top: 15px;
+		margin-right: 40px;
+		white-space: nowrap;
+		color: darkgrey;
+		}
+
+	nav ul {
+		display:table-cell;
+		}
+
+	nav li {
+		margin: 0;
+		display: table-cell;
+		text-align: right;
+		}
+
+	#center {
+		text-align: right;
+		}
+
+	#logo {
+		margin-top: -24px;
+		margin-left: 50px;
+		padding: -15px;
+		height: 80px;
+		width: 80px;
+		display: block;
+		float:left;
+		border-radius: 50%;
+		border-spacing: solid white 4px;
+		background-color: white;
+		border-top: lightgrey solid 2.5px;
+		border-bottom: lightgrey solid 2.5px;
+  	border-right: solid white 0.4px;
+		border-left: solid white 0.4px;
+		}
+
+	#textcenter {
+		font-family: Sura;
+		font-size: 24px;
+		white-space: nowrap;
+		display: inline;
+		}
+
+	#spigotpart {
+  	color: darkgrey;
+		border
+		}
+
+	#firstpart::after {
+		content: "            ";
+		white-space: pre;
+		}
+	#secondpart::after {
+		content: "            ";
+		white-space: pre;
+		}
+	#thirdpart::after {
+		content: "            ";
+		white-space: pre;
+		}
+
+  .circles {
+		width:auto;
+		text-align: center;
+	}
+
+	#circle1 {
+		font-family: Oswald;
+		font-size: 19px;
+    height: 90px;
+    width: 90px;
+    background-color: #ce2029;
+    border-radius: 50%;
+    display: inline-block;
+		vertical-align: top;
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-top: 50px;
+		border: white solid 2px;
+		color: white;
+	}
+
+	#circle2 {
+		font-family: Oswald;
+		font-size: 19px;
+    height: 90px;
+    width: 90px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    display: inline-block;
+		vertical-align: top;
+		margin-right: 40px;
+		margin-top: 50px;
+		border: white solid 2px;
+		color: white;
+	}
+
+	#circle3 {
+		font-family: Oswald;
+		font-size: 19px;
+    height: 90px;
+    width: 90px;
+    background-color: #556b2f;
+    border-radius: 50%;
+    display: inline-block;
+		vertical-align: top;
+		margin-right: 40px;
+		margin-top: 50px;
+		border: white solid 2px;
+		color: white;
+	}
+
+	#circle4 {
+		font-family: Oswald;
+		font-size: 19px;
+    height: 90px;
+    width: 90px;
+    background-color: #20B2AA;
+    border-radius: 50%;
+    display: inline-block;
+		margin-right: 40px;
+		margin-top: 50px;
+		border: white solid 2px;
+		color: white;
+	}
+
+  #titletext {
+		margin-top: 100px;
+		font-family: Oswald;
+		font-size: 40px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	#titletext1 {
+		font-family: Oswald;
+		font-size: 28px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	#upperand {
+		font-size: 24px;
+		vertical-align: baseline;
+	}
+
+  #minititle1 {
+		width:500px;
+		float: left;
+		font-size: 15px;
+		font-family: Oswald;
+		color: grey;
+		margin-left: 30px;
+	}
+
+	#minititle2 {
+		width:30%;
+		float: right;
+		font-size: 15px;
+		font-family: Oswald;
+		color: grey;
+		margin-right: 15px;
+		margin-top: -37.5px;
+	}
+
+  .container1 {
+		float: left;
+		width: 550px;
+		display: block;
+		margin-left: 20px;
+		margin-bottom: 30px;
+	}
+
+	#picture1 {
+		width: 250px;
+		height: 150px;
+		text-align: center;
+		padding: 5px;
+		background-color: grey;
+		border-radius: 8px;
+	}
+
+	#picture2 {
+		width: 250px;
+		height: 150px;
+		text-align: center;
+		padding: 5px;
+		background-color: grey;
+		border-radius: 8px;
+	}
+
+	#picture3 {
+		margin-top: 50px;
+		width: 250px;
+		height: 150px;
+		text-align: center;
+		padding: 5px;
+		background-color: grey;
+		border-radius: 8px;
+	}
+
+	#picture4 {
+		margin-top: 50px;
+		width: 250px;
+		height: 150px;
+		text-align: center;
+		padding: 5px;
+		background-color: grey;
+		border-radius: 8px;
+	}
+
+  .container2 {
+		float: right;
+		width: 30%;
+		margin-right: 20px;
+	}
+
+	.icon1 {
+		width: 300px;
+		height: 60px;
+		margin-top: 10px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#tweet {
+		margin-top: 30px;
+		width: 300px;
+		height: 160px;
+		display: inline;
+	}
+}
+
+@media screen and (max-width:800px) {
+
+	ELEMENTS, {
+		width: 53.083333%;
+	}
+
+	#logo {
+		margin-top: -24px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		float: none;
+	}
+
+	#menu {
+		width: auto;
+		height: 37.8px;
+		display: block;
+	}
+
+	#navbar {
+		position: relative; transform: translate(0, -145px);
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 59px;
+		text-align: center;
+	}
+
+	#textcenter {
+  	text-align: center;
+		display:block;
+		margin-top: -5px;
+	}
+
+	#firstpart::after {
+		content: "        ";
+		white-space: pre;
+	}
+	#secondpart::after {
+		content: "                                      ";
+		white-space: pre;
+	}
+	#thirdpart::after {
+		content: "        ";
+		white-space: pre;
+	}
+
+	#fourthpart::after {
+		content: "        ";
+		white-space: pre;
+  }
+
+	#circle1 {
+		margin: auto;
+	}
+
+	#circle2 {
+		margin:auto;
+	}
+
+	#circle3 {
+		margin:auto;
+	}
+
+	#circle4 {
+		margin:auto;
+	}
+
+	.container2 {
+	  float: none;
+		margin-top: 50px;
+	  margin-right: auto;
+		margin-left: auto;
+	}
+
+	#minititle2 {
+		float: none;
+		margin-top: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: -35px;
+	}
+
+	#minititle1 {
+		float:none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container1 {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#picture1 {
+		margin-right: 5px;
+	}
+
+	#picture2 {
+		margin-left: 5px;
+	}
+
+	#picture3 {
+		margin-right: 5px;
+	}
+
+	#picture4 {
+		margin-left: 5px;
+	}
+
+}
+
+@media screen and (max-width:550px) {
+
+	ELEMENTS, {
+		width: 35.8072917%;
+	}
+
+	.container1 {
+		display: grid;
+	}
+
+	#picture1 {
+		float: none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#picture2 {
+		margin-top: 50px;
+		float: none;
+ 	  margin-left: auto;
+ 	  margin-right: auto;
+	}
+
+	#picture3 {
+		float: none;
+ 	  margin-left: auto;
+ 	  margin-right: auto;
+	}
+
+	#picture4 {
+		float: none;
+ 	  margin-left: auto;
+ 	  margin-right: auto;
+	}
+
+	#minititle1 {
+		width: auto;
+		float:none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container2 {
+		float: none;
+		display: inline;
+		margin-top: 50px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	#minititle2 {
+		display: inline;
+		width: auto;
+		float: none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+}
+
+@media screen and (max-width:400px) {
+
+	ELEMENTS,  {
+	    width:26.04166666%;
+	  }
+
+  #navbar {
+		margin-top: 145px;
+	}
+
+	#firstpart::after {
+		content: "   ";
+		white-space: pre;
+	}
+
+	#secondpart::after {
+		content: "   ";
+		white-space: pre;
+	}
+
+	#thirdpart::after {
+		content: "   ";
+		white-space: pre;
+  }
+
+	#circle1 {
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top:10px;
+	}
+
+	#circle2 {
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top:10px;
+	}
+
+	#circle3 {
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top:10px;
+	}
+
+	#circle4 {
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top:10px;
+	}
+
+	.container1 {
+		display: inline;
+	}
+
+	#picture1 {
+		float: none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#picture2 {
+		margin-top: 50px;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#picture3 {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#picture4 {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+	}
+
+}

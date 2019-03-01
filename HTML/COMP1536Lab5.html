@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chris Qin A00944299 Set A Lab 5</title>
+    <meta charset="utf-8"/>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One);
+@import url(https://fonts.googleapis.com/css?family=Alegreya);
+@import url(https://fonts.googleapis.com/css?family=Cardo);
+
+    .card {
+      margin: 20px;
+      border-top: darkgrey solid 15px;
+      width:375px;
+    }
+
+    .body {
+      background-image: url("paperbackground.jpg");
+      filter: grayscale(50%);
+      height: 515px;
+    }
+
+    .description {
+      font-size: 14px;
+      font-family: Alegreya;
+      transform: translateX(65px) translateY(-230px);
+      display: inline-block;
+    }
+
+    .circle {
+      transform: translateX(40px) translateY(-15px);
+      font-size: 12px;
+      line-height: 11px;
+      display: inline-block;
+      width:60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: orange;
+      filter:drop-shadow(2px 2px 4px black);
+    }
+
+    header {
+      font-family: Yeseva One;
+      font-size: 24px;
+      margin-top: auto;
+      margin-bottom: auto;
+      text-align: center;
+      background-color: darkblue;
+      line-height: 80px;
+      display: block;
+      color: white;
+      border-bottom: lightblue solid 2px;
+    }
+
+    footer {
+      font-size: 20px;
+      font-family: Cardo;
+      border-top:lightblue solid 2px;
+      color: white;
+      background-color: blue;
+      text-align: center;
+      transform: translateY(-235px);
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    tr {
+      font-family: Alegreya;
+      background-color: blue;
+      filter:drop-shadow(3px 3px 6px gray);
+      border: 1px solid blue;
+    }
+
+    ul {
+      list-style-type: none;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+
+    #caption {
+      font-size:12px;
+      float: left;
+      transform: translateX(30px) translateY(30px);
+    }
+
+    #skullicon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transform: translateX(-45px) translateY(-5px);
+      vertical-align: middle;
+    }
+
+    #icons {
+      filter: grayscale(0%);
+      color: white;
+      border-collapse: separate;
+      border-spacing: 5px;
+      margin-left: -5px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div class = "card">
+      <header><img src = "skullicon.jpg" alt = "skullicon" id = "skullicon"/>
+        <span id = "caption">
+        CE</span>N<span>IGHTWALKER</span>
+      <div class = "circle"><br/>EPIC<br/>375 POINTS</div>
+      </header>
+      <div class = "body">
+      <table id = "icons">
+        <tr>
+          <th>LEVEL<br/>(SAVE)<br/>15</th>
+        </tr>
+        <tr>
+          <th>SPEED<br/>8</th>
+        </tr>
+        <tr>
+          <th>AC<br/>32</th>
+        </tr>
+        <tr>
+          <th>HP<br/>200</th>
+        </tr>
+      </table>
+      <div class = "description">
+      <p><span><b>MELEE ATTACK<br/>+20/+20 (30 magic)</b></span><br/><br/>
+        <b>TYPE:</b> Huge Undead<br/><br/>
+      <b>SPECIAL ABILITIES</b></p>
+      <ul>
+        <li>Fearless</li>
+        <li>Cleave</li>
+        <li>Blindsight</li>
+        <li>Conceal 6</li>
+        <li>Melee Reach 3</li>
+        <li>DR 5</li>
+        <li>Immune Cold</li>
+        <li>Spell Resistance</li>
+      </ul>
+      <p><b>SPELLS</b><br/>7th - <i>finger of death</i> &#10063;
+        (range 6; destroy living<br/> creature;
+        25 damage instead on successful save;<br/>DC 21)
+        <br/>5th - <i>cone of cold</i> &#10063; (cone; 30 cold damage;
+        <br/>DC 19), <i>hold monster</i> &#10063; (sight; Paralysis;
+        <br/>DC19) 4th - <i>quickened unholy blight</i> &#10063; (swift;
+        <br/>sight; radius 4; good creatures take 15 damage
+        <br/>and gain attack -2; DC 18)
+      </div>
+      <footer>DUNGEONS&DRAGONS
+      </footer>
+    </div>
+    </div>
+
+	</body>
+</html>

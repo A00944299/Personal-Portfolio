@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COMP 1536 Lab 5: Rebuilt with JavaScript</title>
+    <meta charset="utf-8"/>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One);
+@import url(https://fonts.googleapis.com/css?family=Alegreya);
+@import url(https://fonts.googleapis.com/css?family=Cardo);
+</style>
+  </head>
+  <body>
+    <script type = "text/javascript">
+
+        function editDoc() {
+
+            // var importedFont1 = new FontFace('Yeseva One', 'url(https://fonts.googleapis.com/css?family=Yeseva+One)');
+            //   importedFont1.load().then(function(loaded_face) {
+            //     document.fonts.add(loaded_face);
+            //   }).catch(function(error) {
+            //   });
+            // var importedFont2 = new FontFace('Alegreya', 'url(https://fonts.googleapis.com/css?family=Alegreya)');
+            //   importedFont2.load().then(function(loaded_face) {
+            //     document.fonts.add(loaded_face);
+            //   }).catch(function(error) {
+            //   });
+            // var importedFont3 = new FontFace('Cardo', 'url(https://fonts.googleapis.com/css?family=Cardo)');
+            //   importedFont3.load().then(function(loaded_face) {
+            //     document.fonts.add(loaded_face);
+            //   }).catch(function(error) {
+            //   });
+
+            var head = document.createElement("head");
+            document.head = head;
+
+            var body = document.createElement("body");
+            document.body = body;
+
+            var divMenu = document.createElement("div");
+            divMenu.setAttribute("id", "card");
+            body.appendChild(divMenu);
+
+            var cardDiv = document.getElementById("card");
+            cardDiv.style.width = "350px";
+            cardDiv.style.borderTop = "darkgrey solid 15px";
+            cardDiv.style.margin = "20px";
+
+            var header = document.createElement("header");
+            header.setAttribute("id", "h1");
+            divMenu.appendChild(header);
+
+            var menu = document.getElementById("h1");
+            menu.style.fontFamily = "Yeseva One";
+            menu.style.fontSize = "22px";
+            menu.style.marginTop = "auto";
+            menu.style.marginBottom = "auto";
+            menu.style.textAlign = "right";
+            menu.style.backgroundColor = "darkblue";
+            menu.style.lineHeight = "80px";
+            menu.style.display = "block";
+            menu.style.color = "white";
+            menu.style.borderBottom = "lightblue solid 3px";
+            menu.innerHTML = "N";
+
+            var span2 = document.createElement("span");
+            span2.setAttribute("id", "secondPart");
+            header.appendChild(span2);
+
+            var span2caption = document.getElementById("secondPart");
+            span2caption.style.fontSize = "18px";
+            span2.innerHTML = "IGHTWALKER";
+
+            var skullimg = document.createElement("img");
+            skullimg.setAttribute("id", "skullicon");
+            skullimg.setAttribute("src", "skullicon.jpg");
+            skullimg.setAttribute("alt", "skullicon");
+            header.appendChild(skullimg);
+
+            var skullicon = document.getElementById("skullicon");
+            skullicon.style.width = "50px";
+            skullicon.style.height = "50px";
+            skullicon.style.borderRadius = "50%";
+            skullicon.style.transform = "translateX(-225px) translateY(-5px)";
+            skullicon.style.verticalAlign = "middle";
+
+            var span1 = document.createElement("span");
+            span1.setAttribute("id", "caption");
+            header.appendChild(span1);
+
+            var span1caption = document.getElementById("caption");
+            span1caption.style.fontSize = "12px";
+            span1caption.style.float = "left";
+            span1caption.style.transform = "translateX(30px) translateY(30px)";
+            span1.innerHTML = "CE";
+
+            var div1 = document.createElement("div");
+            div1.setAttribute("id", "circle");
+            header.appendChild(div1);
+
+            var circle1 = document.getElementById("circle");
+            circle1.style.fontSize = "12px";
+            circle1.style.lineHeight = "11px";
+            circle1.style.display = "inline-block";
+            circle1.style.width = "60px";
+            circle1.style.height = "60px";
+            circle1.style.textAlign = "center";
+            circle1.style.borderRadius = "50%";
+            circle1.style.backgroundColor = "orange";
+            circle1.style.filter = "drop-shadow(2px 2px 4px black)";
+            circle1.style.transform = "translateX(-10px) translateY(-10px)";
+            circle1.innerHTML = "<br/>EPIC<br/>375<br/>POINTS"
+
+            var div2 = document.createElement("div");
+            div2.setAttribute("id", "body");
+            divMenu.appendChild(div2);
+
+            var bodyDiv = document.getElementById("body");
+            bodyDiv.style.backgroundImage = "url('paperbackground.jpg')";
+            bodyDiv.style.filter = "grayscale(50%)";
+            bodyDiv.style.height = "525px";
+
+            var table = document.createElement("table");
+            table.setAttribute("id", "sideBar");
+            div2.appendChild(table);
+
+            var tableIcons = document.getElementById("sideBar");
+            tableIcons.style.filter = "grayscale(0%)";
+            tableIcons.style.color = "white";
+            tableIcons.style.borderCollapse = "separate";
+            tableIcons.style.borderSpacing = "5px";
+            tableIcons.style.marginLeft = "-4px";
+
+            var tableRow1 = document.createElement("tr");
+            tableRow1.setAttribute("class", "tableRows");
+            table.appendChild(tableRow1);
+
+            var tableHeader1 = document.createElement("th");
+            tableRow1.appendChild(tableHeader1);
+            tableHeader1.innerHTML = "LEVEL<br/>(SAVE)<br/>15";
+
+            var tableRow2 = document.createElement("tr");
+            tableRow2.setAttribute("class", "tableRows");
+            table.appendChild(tableRow2);
+
+            var tableHeader2 = document.createElement("th");
+            tableRow2.appendChild(tableHeader2);
+            tableHeader2.innerHTML = "SPEED<br/>8";
+
+            var tableRow3 = document.createElement("tr");
+            tableRow3.setAttribute("class", "tableRows");
+            table.appendChild(tableRow3);
+
+            var tableHeader3 = document.createElement("th");
+            tableRow3.appendChild(tableHeader3);
+            tableHeader3.innerHTML = "AC<br/>32";
+
+            var tableRow4 = document.createElement("tr");
+            tableRow4.setAttribute("class", "tableRows");
+            table.appendChild(tableRow4);
+
+            var tableHeader4 = document.createElement("th");
+            tableRow4.appendChild(tableHeader4);
+            tableHeader4.innerHTML = "HP<br/>200";
+
+            var tableHeaders = document.getElementsByClassName("tableRows");
+            for (var i=0;i<tableHeaders.length; i++) {
+              tableHeaders[i].style.fontFamily = "Alegreya";
+              tableHeaders[i].style.backgroundColor = "blue";
+              tableHeaders[i].style.filter = "drop-shadow(3px 3px 6px gray)";
+              tableHeaders[i].style.border = "1px solid blue";
+            }
+
+            var description = document.createElement("div");
+            description.setAttribute("id", "description");
+            divMenu.appendChild(description);
+
+            var description1 = document.getElementById("description");
+            description1.style.fontSize = "14px";
+            description1.style.fontFamily = "Alegreya";
+            description1.style.transform = "translateX(65px) translateY(-530px)";
+            description1.style.display = "inline-block";
+
+            var part1 = document.createElement("p");
+            description1.appendChild(part1);
+
+            var spanPart1 = document.createElement("span");
+            spanPart1.setAttribute("id", "bolded");
+            part1.appendChild(spanPart1);
+            spanPart1.innerHTML = "MELEE ATTACK<br/>+20/+20 (30 magic)<br/><br/>";
+
+            var title = document.getElementById("bolded");
+            title.style.fontWeight = "bold";
+            title.style.fontSize = "20px";
+
+            var spanPart2 = document.createElement("span");
+            spanPart2.setAttribute("id", "bolded1");
+            part1.appendChild(spanPart2);
+            spanPart2.innerHTML = "<b>TYPE:</b> Huge Undead<br/><br/><b>SPECIAL ABILITIES</b>";
+
+            var listOfAbilites = document.createElement("ul");
+            listOfAbilites.setAttribute("id", "list");
+            description1.appendChild(listOfAbilites);
+
+            var listCss = document.getElementById("list");
+            listCss.style.listStyleType = "none";
+            listCss.style.fontWeight = "bold";
+            listCss.style.margin = "0";
+            listCss.style.padding = "0";
+
+            var li1 = document.createElement("li");
+            listOfAbilites.appendChild(li1);
+            li1.innerHTML = "Fearless"
+
+            var li2 = document.createElement("li");
+            listOfAbilites.appendChild(li2);
+            li2.innerHTML = "Cleave";
+
+            var li3 = document.createElement("li");
+            listOfAbilites.appendChild(li3);
+            li3.innerHTML = "BlindSight";
+
+            var li4 = document.createElement("li");
+            listOfAbilites.appendChild(li4);
+            li4.innerHTML = "Conceal 6";
+
+            var li5 = document.createElement("li");
+            listOfAbilites.appendChild(li5);
+            li5.innerHTML = "Melee Reach 3";
+
+            var li6 = document.createElement("li");
+            listOfAbilites.appendChild(li6);
+            li6.innerHTML = "DR 5";
+
+            var li7 = document.createElement("li");
+            listOfAbilites.appendChild(li7);
+            li7.innerHTML = "Immune Cold";
+
+            var li8 = document.createElement("li");
+            listOfAbilites.appendChild(li8);
+            li8.innerHTML = "Spell Resistance";
+
+            var part2 = document.createElement("p");
+            description1.appendChild(part2);
+            part2.innerHTML = "<b>SPELLS</b><br/>7th - <i>finger of death</i> &#10063;"
+              + "(range 6; destroy living<br/> creature;"
+              + "25 damage instead on successful save;<br/>DC 21)"
+              + "<br/>5th - <i>cone of cold</i> &#10063; (cone; 30 cold damage;"
+              + "<br/>DC 19), <i>hold monster</i> &#10063; (sight; Paralysis;"
+              + "<br/>DC19) 4th - <i>quickened unholy blight</i> &#10063; (swift;"
+              + "<br/>sight; radius 4; good creatures take 15 damage"
+              + "<br/>and gain attack -2; DC 18)"
+
+            var footer = document.createElement("footer");
+            footer.setAttribute("id", "footer");
+            divMenu.appendChild(footer);
+            footer.innerHTML = "DUNGEONS&DRAGONS";
+
+            var footerCss = document.getElementById("footer");
+            footerCss.style.fontSize = "20px";
+            footerCss.style.fontFamily = "Cardo";
+            footerCss.style.borderTop = "lightblue solid 2px";
+            footerCss.style.color = "white";
+            footerCss.style.backgroundColor = "darkblue";
+            footerCss.style.textAlign = "center";
+            footerCss.style.transform = "translateY(-535px)";
+
+        }
+        editDoc();
+
+    </script>
+
+  </body>
+</html>

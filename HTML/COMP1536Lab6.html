@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COMP 1536 Lab 5: Rebuilt with JQuery</title>
+    <meta charset="utf-8"/>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+        var twitter = $("<div id = 'twitter'></div>");
+        $("body").append(twitter);
+
+        $('#twitter').css({
+          width: "auto",
+          height: "700px",
+          backgroundImage: "url('lucian.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPositon: "center",
+          backgroundSize: "cover",
+          filter: "opacity(70%)",
+        });
+
+        var menu = $("<div id = 'menu'></div>");
+        $(twitter).append(menu);
+
+        var topLeftMenu = $("<img id = 'threeBars' src = '3barimage.png' alt = '3bars'></img>");
+        $(menu).prepend(topLeftMenu);
+        $('#threeBars').css({
+          width: "30px",
+          height: "30px",
+          display: "block",
+          float: "left",
+          marginTop: "8px",
+          marginLeft: "8px",
+          clear: "right",
+          filter: "invert(100%)",
+        })
+
+        var menuText = $("<header id = 'header'>Home</header>");
+        $(twitter).append(menuText);
+        $('#header').css ({
+          width: "auto",
+          color: "white",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingTop: "10px",
+          textAlign: "center",
+          display: "block",
+          fontSize: "23px",
+          fontFamily: "Roboto Condensed",
+        })
+
+        var topRightMenu = $("<img id = 'threeDots' src = '3dotimage.png' alt = '3dots'></img>");
+        $(menu).append(topRightMenu);
+        $('#threeDots').css({
+          width: "40px",
+          height: "40px",
+          display: "block",
+          float: "right",
+          marginTop: "5px",
+          marginRight: "5px",
+          filter: "invert(100%)",
+        })
+
+        var middleSection = $("<div id = 'middle'></div>");
+        $(twitter).append(middleSection);
+        $('#middle').css({
+          marginTop: "8px",
+          marginBottom: "15px",
+        })
+
+        var middleProfilePic = $("<img id = 'lucianProfile' src = 'lucianorig.jpg' alt = 'luc'></img>");
+        $(middleSection).append(middleProfilePic);
+        $('#lucianProfile').css({
+          width: "80px",
+          height: "80px",
+          borderRadius: "50%",
+          border: "solid white 2px",
+          marginRight: "auto",
+          marginLeft: "auto",
+          display: "block",
+          verticalAlign: "bottom",
+        })
+
+        var description = $("<div id = 'description'></div>");
+        $(middleSection).append(description);
+        $('#description').css({
+          display: "block",
+        })
+
+        var name = $("<p id = 'nameLucian'>LUCIAN</p>");
+        $(description).prepend(name)
+        $('#nameLucian').css({
+          textAlign: "center",
+          fontSize: "24px",
+          fontFamily: "Roboto Condensed",
+          color: "white",
+        })
+
+        var about = $("<p id = 'aboutLucian'>The Purifier</p>");
+        $(description).append(about);
+        $('#aboutLucian').css({
+          textAlign: "center",
+          fontSize: "18px",
+          fontFamily: "Roboto Condensed",
+          color: "white",
+        })
+
+        var about2 = $("<span id = 'aboutLucian2'><br/>After losing his wife to the shadows,<br/>Lucian vowed to vanquish all darkness.</span>");
+        $(about).append(about2);
+        $('#aboutLucian2').css({
+          textAlign: "center",
+          fontSize: "16px",
+          fontFamily: "Roboto Condensed",
+          color: "white",
+        })
+          $(function () {
+            function createRefreshButton() {
+              var $btn = $("<button class = 'lucianButton' type = 'button'>Purify</button>").css({
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                textAlign: "center",
+                borderRadius: "3px",
+              });
+          $('button').click(function(){
+              $(lucianButton).setText('SeeMore2');
+              if($this.hasClass('SeeMore2')){
+                $this.text('See More');
+              } else {
+                $this.text('See Less');
+              }
+          })
+              return $btn;
+            }
+            $(middleSection).append(createRefreshButton());
+          })
+
+    });
+
+    </script>
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+
+    </style>
+  </head>
+  <body>
+
+  </body>
+</html>

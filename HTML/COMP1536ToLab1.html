@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>COMP1536 To Lab1</title>
+		<meta charset="utf-8"/>
+		<style>
+		.button{
+			background-color: #00FFFF;
+			border: 2px solid black;
+			color: black;
+			padding: 12px 20px;
+			text-align: center;
+			font-size: 10px;
+			cursor: pointer;
+	}
+		.button:hover {
+		background-color: blue;
+}
+	</style>
+	</head>
+	<body>
+	<form action = "file:///C:/Users/chris/Desktop/School/COMP%201536/HTML%20Pages/COMP1536Lab1.html">
+	 <fieldset>
+		<legend>User Profile</legend>
+		User ID: <input type = "text" name = "user_ID" pattern = ".[a-zA-Z]{8,20}" title = "8-20 characters, no numbers" placeholder = "Username" autofocus = "autofocus" required/> &#40;8-20 characters&#41; <br/>
+		Password: <input type = "password" name = "password" pattern = ".[a-zA-Z0-9]{9,21}" title = "10-20 characters" placeholder = "Password" required /><br/>
+		Age Field:<br/>
+		<input type = "radio" name = "age" value = "18 - 30" required> 18 - 30
+		<input type = "radio" name = "age" value = "31 - 50" required> 31 - 50
+		<input type = "radio" name = "age" value = "51 - 65" required> 51 - 65
+		<br/><br/>
+		<input type = "submit" value = "Submit"/> <input type = "reset" value = "Reset"/>
+	 </fieldset>
+	 <fieldset>
+		<legend>User Personal Info</legend>
+		Gender:<br/>
+		<input type = "radio" name = "gender" value = "male"> Male
+		<input type = "radio" name = "gender" value = "female"> Female
+		<input type = "radio" name = "gender" value = "other"> Other
+		<br/><br/>
+		Hobbies:<br/>
+		<select name = "sports">
+			<option value = "badminton">Badminton</option>
+			<option value = "basketball">Basketball</option>
+			<option value = "hiking" selected>Hiking</option>
+			<option value = "soccer">Soccer</option>
+			<option value = "football">Football</option>
+		</select>
+		<br/><br/>
+		Other information you want to provide:<br/>
+		<textarea name = "description" rows = "13" cols = "50">
+		</textarea><br/><br/>
+	 </fieldset>
+	 <fieldset>
+		<legend>Fun</legend>
+		Username: <input type = "text" name = "username" />
+		<br/>
+		<button><a href = "http://en.gameslol.net/king-of-fighters-wing-1-9-182.html">Link2Fun</a></button>
+	 </fieldset>
+    </form>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Problem 1</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <script type = "text/javascript">
+
+        function editDoc() {
+
+          var head = document.createElement("head");
+          document.head = head;
+
+          var body = document.createElement("body");
+          document.body = body;
+
+          var formDiv = document.createElement("div");
+          body.appendChild(formDiv);
+
+          var form = document.createElement("form");
+          form.setAttribute("action", "https://www.bcit.ca/");
+          formDiv.appendChild(form);
+
+          var input1 = document.createElement("input");
+          input1.setAttribute("type", "text");
+          input1.setAttribute("required", "required");
+          input1.setAttribute("pattern", ".[a-zA-Z]{1,13}");
+          form.appendChild(input1);
+
+          var input2 = document.createElement("input");
+          input2.setAttribute("type", "number");
+          input2.setAttribute("max", "99");
+          input2.setAttribute("min", "18");
+          input2.setAttribute("required", "required");
+          form.appendChild(input2);
+
+          var input3 = document.createElement("input");
+          input3.setAttribute("type", "email");
+          input3.setAttribute("pattern", "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
+          input3.setAttribute("required", "required");
+          form.appendChild(input3);
+
+          var input4 = document.createElement("input");
+          input4.setAttribute("type", "submit");
+          input4.setAttribute("value", "Submit");
+          form.appendChild(input4);
+
+        }
+        editDoc();
+
+    </script>
+
+  </body>
+</html>
