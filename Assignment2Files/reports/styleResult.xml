@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.10">
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q1\PhoneNumbers.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q2\CylinderStats.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q3\Cylinder.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q3\MultiCylinder.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q4\Box.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q4\BoxTest.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q5\Email.java">
+</file>
+<file name="C:\Users\chris\Desktop\School\COMP 1510 Java\Assignment2Files\src\q5\EmailPane.java">
+<error line="49" column="5" severity="warning" message="Executable statement count is 51 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ExecutableStatementCountCheck"/>
+</file>
+</checkstyle>
