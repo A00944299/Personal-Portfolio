@@ -1,0 +1,1184 @@
+SQL> 
+SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+Session altered.
+
+SQL> 
+SQL> SELECT SYSDATE
+  2  FROM DUAL;
+
+SYSDATE                                                                         
+----------                                                                      
+2019-01-21                                                                      
+
+SQL> 
+SQL> DROP TABLE Booking;
+
+Table dropped.
+
+SQL> DROP TABLE Guest;
+
+Table dropped.
+
+SQL> DROP TABLE Room;
+
+Table dropped.
+
+SQL> DROP TABLE Hotel;
+
+Table dropped.
+
+SQL> --
+SQL> -- Create Sample Tables for assignment
+SQL> -- NOTE: the following is NOT necessary good practices!
+SQL> --
+SQL> CREATE TABLE Hotel
+  2  (hotelNo         NUMBER(4)       NOT NULL
+  3  ,hotelName       VARCHAR2(16)    NOT NULL
+  4  ,hotelAddress    VARCHAR2(40)    NOT NULL
+  5  ,country         VARCHAR2(20)    NOT NULL
+  6  ,PRIMARY KEY (hotelNo)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Room
+  2  (hotelNo         NUMBER(4)       NOT NULL
+  3  ,roomNo          NUMBER(4)       NOT NULL
+  4  ,type            VARCHAR2(8)     NOT NULL
+  5  ,price           NUMBER(6,2)     NOT NULL
+  6  ,PRIMARY KEY (hotelNo, roomNo)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Guest
+  2  (guestNo         NUMBER(4)       NOT NULL
+  3  ,guestName       VARCHAR2(15)    NOT NULL
+  4  ,guestAddress    VARCHAR2(40)    NOT NULL
+  5  ,country         VARCHAR2(20)    NOT NULL
+  6  ,PRIMARY KEY (guestNo)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Booking
+  2  (hotelNo          NUMBER(4)      NOT NULL
+  3  ,guestNo          NUMBER(4)      NOT NULL
+  4  ,dateFrom         DATE           NOT NULL
+  5  ,dateTo           DATE
+  6  ,roomNo           NUMBER(4)      NOT NULL
+  7  ,PRIMARY KEY (hotelNo, guestNo, dateFrom)
+  8  );
+
+Table created.
+
+SQL> --
+SQL> -- Insert Sample Data
+SQL> --
+SQL> INSERT INTO Hotel
+  2    VALUES (1, 'Grosvenor Hotel', '100 Rue St. Dominique, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (2, 'Holiday Hotel', '789 Paris St.,Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (3, 'Holiday Inn', '56 Rue Bonaparte, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (4, 'The Ramada', '22 Memorial Ave., New York', 'USA');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (5, 'Imperial Palace', '777 Douglas Rd, North Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (6, 'Park Royal Hotel', '88 Chestnut Dr, South Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (7, 'Delta Inn', '900 Delta Street, Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (8, 'Grosvenor Inn', '123 Surrey Street,  Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (9, 'Royale Paris', '500 Avenue Montaigne, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (10, 'Olympic Resort', '223 Olympic Street, Whistler', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    VALUES (11, 'Romantic Hotel', '223 Rue Cler, Paris', 'France');
+
+1 row created.
+
+SQL> --
+SQL> INSERT INTO Room
+  2    VALUES (1, 1, 'Single', 40);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 2, 'Single', 40);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 3, 'Single', 40);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 4, 'Single', 40);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 5, 'Double', 55);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 6, 'Double', 55);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 7, 'Double', 55);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 8, 'Double', 55);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 9, 'Family', 85);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 10, 'Family', 90);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 11, 'Deluxe', 110);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 12, 'Deluxe', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (1, 13, 'Deluxe', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 1, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 2, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 3, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 4, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 5, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 6, 'Family', 90);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 7, 'Family', 90);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 8, 'Family', 90);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 9, 'Family', 90);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 10, 'Deluxe', 150);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 11, 'Deluxe', 150);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (2, 12, 'Deluxe', 150);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 1, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 2, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 3, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 4, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 5, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 6, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 7, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 8, 'Single', 35);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 9, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 10, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 11, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 12, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 13, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (3, 14, 'Double', 50);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 1, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 2, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 3, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 4, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 5, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 6, 'Double', 100);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 7, 'Family', 160);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 8, 'Family', 160);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 9, 'Family', 160);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 10, 'Family', 160);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 11, 'Family', 160);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 12, 'Deluxe', 240);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 13, 'Deluxe', 240);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 14, 'Deluxe', 240);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 15, 'Deluxe', 240);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (4, 16, 'Deluxe', 240);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 1, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 2, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 3, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 4, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 5, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 6, 'Double', 80);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 7, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 8, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 9, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 10, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 11, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 12, 'Family', 120);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 13, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 14, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 15, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 16, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 17, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (5, 18, 'Deluxe', 145);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 1, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 2, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 3, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 4, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 5, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 6, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 7, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 8, 'Single', 48);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 9, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 10, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 11, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 12, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 13, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 14, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 15, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (6, 16, 'Double', 86);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 1, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 2, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 3, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 4, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 5, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 6, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 7, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 8, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 9, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 10, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 11, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (7, 12, 'Double', 75);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 1, 'Double', 95);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 2, 'Double', 95);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 3, 'Double', 95);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 4, 'Double', 95);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 5, 'Double', 95);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 6, 'Family', 125);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 7, 'Family', 125);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 8, 'Family', 125);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 9, 'Family', 125);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 10, 'Family', 125);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 11, 'Deluxe', 155);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 12, 'Deluxe', 155);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 13, 'Deluxe', 155);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 14, 'Deluxe', 155);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 15, 'Deluxe', 155);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 16, 'Single', 45);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 17, 'Single', 45);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 18, 'Single', 45);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 19, 'Single', 45);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    VALUES (8, 20, 'Single', 45);
+
+1 row created.
+
+SQL> --
+SQL> INSERT INTO Guest
+  2    VALUES (1, 'Tony Saunders', '2000 Queens Avenue, Winnipeg', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (2, 'Ed Cunningham', '30 Oak Street,  Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (3, 'Dawn Smith', '25 Walton Drive, Banff', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (4, 'George Michaels', '30 Hampton Street, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (5, 'Rick Hamilton', '987 King Edward Road, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (6, 'Floyd Mann', '8 Wascana Crescent, Regina', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (7, 'Thomas Lee', '200 Main Street,Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (8, 'Sandy Alford', '234 Ontario Street, Montreal', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (9, 'Peter Kennedy', '20 Austin Drive, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (10, 'Gordon Ho', '5 No. 3 Road, Paris', 'France');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (11, 'Diana Darby', '50 Robson Street, Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (12, 'Sundeep Mohan', '1000 Victoria Avenue, Paris',  'France');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (13, 'Eileen Reynolds', '100 Willow Stree, Calgary', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (14, 'Ken Matsuda', '333 100th Avenue, Surrey', 'Canada');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    VALUES (15, 'Ivan Pratt', '20 Lincoln Square, Paris', 'France');
+
+1 row created.
+
+SQL> --
+SQL> INSERT INTO Booking
+  2    VALUES (1, 5, DATE'2019-01-16', DATE'2019-01-24', 7);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 9, DATE'2019-01-24', DATE'2019-02-04', 5);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 9, DATE'2019-02-07', DATE'2019-02-14', 5);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 9, DATE'2019-03-07', DATE'2019-03-14', 5);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 10, DATE'2019-03-22', DATE'2019-03-30', 1);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 11, DATE'2019-02-06', DATE'2019-02-22', 3);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 12, DATE'2019-01-21', DATE'2019-02-24', 4);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 13, DATE'2019-01-30', NULL, 7);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 14, DATE'2019-01-25', DATE'2019-01-28', 2);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (1, 15, DATE'2019-01-22', DATE'2019-02-02', 3);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (2, 1, DATE'2019-01-21', DATE'2019-01-23', 9);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (2, 6, DATE'2019-01-21', NULL, 10);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (3, 2, DATE'2019-01-26', NULL, 3);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (3, 6, DATE'2019-03-05', DATE'2019-03-07', 12);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (4, 11, DATE'2019-01-27', DATE'2019-01-28', 14);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (4, 7, DATE'2019-02-09', DATE'2019-02-11', 4);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (4, 8, DATE'2019-03-10', DATE'2019-03-18', 7);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (5, 3, DATE'2019-02-06', DATE'2019-02-08', 17);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (5, 11, DATE'2019-02-06', NULL, 16);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (6, 1, DATE'2019-01-30', DATE'2019-02-02', 5);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (6, 14, DATE'2019-03-06', DATE'2019-03-08', 8);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (6, 9, DATE'2019-03-06', NULL, 4);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (7, 15, DATE'2019-02-28', DATE'2019-03-05', 1);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (7, 4, DATE'2019-02-02', DATE'2019-02-04', 2);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (8, 1, DATE'2019-02-03', DATE'2019-03-26', 15);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (8, 12, DATE'2019-02-01', DATE'2019-03-07', 20);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    VALUES (8, 5, DATE'2019-01-19', DATE'2019-02-28', 1);
+
+1 row created.
+
+SQL> --
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- Question 1:
+SQL> SELECT DISTINCT hotelName, hotelAddress, type, price
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5  WHERE country = 'France'
+  6    AND type = ANY ('Single', 'Double', 'Family')
+  7    AND price < 100.00
+  8  ORDER BY hotelName DESC,
+  9           price ASC,
+ 10           type DESC;
+
+HOTELNAME        HOTELADDRESS                             TYPE          PRICE   
+---------------- ---------------------------------------- -------- ----------   
+Holiday Inn      56 Rue Bonaparte, Paris                  Single           35   
+Holiday Inn      56 Rue Bonaparte, Paris                  Double           50   
+Grosvenor Hotel  100 Rue St. Dominique, Paris             Single           40   
+Grosvenor Hotel  100 Rue St. Dominique, Paris             Double           55   
+Grosvenor Hotel  100 Rue St. Dominique, Paris             Family           85   
+Grosvenor Hotel  100 Rue St. Dominique, Paris             Family           90   
+
+6 rows selected.
+
+SQL> 
+SQL> -- Question 2:
+SQL> SELECT hotelName, hotelAddress, roomNo, dateFrom, dateTo
+  2  FROM Hotel
+  3    INNER JOIN Booking
+  4      ON Hotel.hotelNo = Booking.hotelNo
+  5  WHERE dateTo IS NULL
+  6    AND hotelAddress LIKE '%Surrey'
+  7    AND hotelAddress NOT LIKE '%North Surrey'
+  8    AND hotelAddress NOT LIKE '%South Surrey';
+
+HOTELNAME        HOTELADDRESS                                 ROOMNO DATEFROM   
+---------------- ---------------------------------------- ---------- ---------- 
+DATETO                                                                          
+----------                                                                      
+Holiday Hotel    789 Paris St.,Surrey                             10 2019-01-21 
+                                                                                
+                                                                                
+
+SQL> 
+SQL> -- Question 3a:
+SQL> SELECT hotelName, AVG(price) AS AVERAGE_PRICE
+  2  FROM Room INNER JOIN Hotel
+  3    ON Room.hotelNo = Hotel.hotelNo
+  4  GROUP BY hotelName
+  5  ORDER BY hotelName ASC;
+
+HOTELNAME        AVERAGE_PRICE                                                  
+---------------- -------------                                                  
+Delta Inn                   75                                                  
+Grosvenor Hotel     69.6153846                                                  
+Grosvenor Inn              105                                                  
+Holiday Hotel       100.833333                                                  
+Holiday Inn         41.4285714                                                  
+Imperial Palace            115                                                  
+Park Royal Hotel            67                                                  
+The Ramada               162.5                                                  
+
+8 rows selected.
+
+SQL> 
+SQL> -- Question 3b:
+SQL> SELECT country, hotelName, AVG(price) AS AVERAGE_PRICE
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5  WHERE type <> 'Deluxe'
+  6  GROUP BY country, hotelName
+  7  ORDER BY country ASC,
+  8           hotelName ASC;
+
+COUNTRY              HOTELNAME        AVERAGE_PRICE                             
+-------------------- ---------------- -------------                             
+Canada               Delta Inn                   75                             
+Canada               Grosvenor Inn       88.3333333                             
+Canada               Holiday Hotel       84.4444444                             
+Canada               Imperial Palace            100                             
+Canada               Park Royal Hotel            67                             
+France               Grosvenor Hotel           55.5                             
+France               Holiday Inn         41.4285714                             
+USA                  The Ramada          127.272727                             
+
+8 rows selected.
+
+SQL> 
+SQL> -- Question 4:
+SQL> SELECT hotelName, SUM(price) AS TOTAL_REVENUE
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5  WHERE type = 'Double'
+  6  GROUP BY hotelName
+  7  HAVING SUM(price) >= 500.00
+  8    AND SUM(price) <= 1000.00
+  9  ORDER BY hotelName ASC;
+
+HOTELNAME        TOTAL_REVENUE                                                  
+---------------- -------------                                                  
+Delta Inn                  900                                                  
+Park Royal Hotel           688                                                  
+The Ramada                 600                                                  
+
+SQL> 
+SQL> -- Question 5:
+SQL> SELECT hotelName, type, price, COUNT(*) AS NUMBER_OF_ROOMS
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5  WHERE hotelName LIKE 'Grosvenor%'
+  6  HAVING COUNT(*) > 3
+  7  GROUP BY hotelName, type, price
+  8  ORDER BY hotelName,
+  9           type,
+ 10           price;
+
+HOTELNAME        TYPE          PRICE NUMBER_OF_ROOMS                            
+---------------- -------- ---------- ---------------                            
+Grosvenor Hotel  Double           55               4                            
+Grosvenor Hotel  Single           40               4                            
+Grosvenor Inn    Deluxe          155               5                            
+Grosvenor Inn    Double           95               5                            
+Grosvenor Inn    Family          125               5                            
+Grosvenor Inn    Single           45               5                            
+
+6 rows selected.
+
+SQL> 
+SQL> -- Question 6:
+SQL> SELECT DISTINCT hotelName, Booking.roomNo, guestName, dateFrom, dateTo
+  2  FROM Hotel
+  3    INNER JOIN Booking
+  4      ON Hotel.hotelNo = Booking.hotelNo
+  5    INNER JOIN Guest
+  6      ON Guest.guestNo = Booking.guestNo
+  7    INNER JOIN Room
+  8      ON Hotel.hotelNo = Room.hotelNo
+  9  WHERE hotelName LIKE '%Grosvenor Hotel'
+ 10  AND dateFrom <= DATE'2019-01-21'
+ 11  AND (dateTo IS NULL OR dateTo >= Date'2019-01-21')
+ 12  ORDER BY roomNo ASC;
+
+HOTELNAME            ROOMNO GUESTNAME       DATEFROM   DATETO                   
+---------------- ---------- --------------- ---------- ----------               
+Grosvenor Hotel           4 Sundeep Mohan   2019-01-21 2019-02-24               
+Grosvenor Hotel           7 Rick Hamilton   2019-01-16 2019-01-24               
+
+SQL> 
+SQL> -- Question 7:
+SQL> SELECT DISTINCT hotelName, SUM(price) AS TOTAL_INCOME
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5    INNER JOIN Booking
+  6      ON Hotel.hotelNo = Booking.hotelNo
+  7      AND Room.roomNo = Booking.roomNo
+  8  WHERE hotelName LIKE '%Grosvenor%'
+  9  AND dateFrom <= DATE'2019-01-21'
+ 10  AND (dateTo IS NULL OR dateTo >= Date'2019-01-21')
+ 11  GROUP BY hotelName
+ 12  ORDER BY hotelName;
+
+HOTELNAME        TOTAL_INCOME                                                   
+---------------- ------------                                                   
+Grosvenor Hotel            95                                                   
+Grosvenor Inn              95                                                   
+
+SQL> 
+SQL> -- Question 8:
+SQL> SELECT Booking.hotelNo, hotelName, type, SUM(price) AS TOTAL_INCOME, dateFrom, dateTo
+  2  FROM Hotel
+  3    INNER JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5    INNER JOIN Booking
+  6      ON Hotel.hotelNo = Booking.hotelNo
+  7      AND Room.roomNo = Booking.roomNo
+  8  WHERE dateFrom <= DATE'2019-01-21'
+  9  AND (dateTo IS NULL OR dateTo >= Date'2019-01-21')
+ 10  GROUP BY Booking.hotelNo, hotelName, type, dateFrom, dateTo
+ 11  ORDER BY hotelName,
+ 12           Room.type;
+
+   HOTELNO HOTELNAME        TYPE     TOTAL_INCOME DATEFROM   DATETO             
+---------- ---------------- -------- ------------ ---------- ----------         
+         1 Grosvenor Hotel  Double             55 2019-01-16 2019-01-24         
+         1 Grosvenor Hotel  Single             40 2019-01-21 2019-02-24         
+         8 Grosvenor Inn    Double             95 2019-01-19 2019-02-28         
+         2 Holiday Hotel    Deluxe            150 2019-01-21                    
+         2 Holiday Hotel    Family             90 2019-01-21 2019-01-23         
+
+SQL> 
+SQL> -- Question 9:
+SQL> SELECT hotelName
+  2  FROM Hotel
+  3    LEFT JOIN Room
+  4      ON Hotel.hotelNo = Room.hotelNo
+  5  WHERE roomNo IS NULL
+  6  ORDER BY hotelName;
+
+HOTELNAME                                                                       
+----------------                                                                
+Olympic Resort                                                                  
+Romantic Hotel                                                                  
+Royale Paris                                                                    
+
+SQL> 
+SQL> -- Question 10:
+SQL> SELECT (COUNT(DISTINCT hotelName))  AS total_Hotels,
+  2         (COUNT (DISTINCT Room.hotelNo))  AS hotels_Completed,
+  3         ((COUNT(DISTINCT hotelName)) - (COUNT (DISTINCT Room.hotelNo)))  AS hotels_Incomplete,
+  4         (((COUNT(DISTINCT hotelName)) - (COUNT (DISTINCT Room.hotelNo)))
+  5          / (COUNT(DISTINCT hotelName))) * 100  AS percent_Incomplete
+  6  FROM Hotel
+  7    LEFT JOIN Room
+  8      ON Hotel.hotelNo = Room.hotelNo;
+
+TOTAL_HOTELS HOTELS_COMPLETED HOTELS_INCOMPLETE PERCENT_INCOMPLETE              
+------------ ---------------- ----------------- ------------------              
+          11                8                 3         27.2727273              
+
+SQL> 
+SQL> SPOOL OFF

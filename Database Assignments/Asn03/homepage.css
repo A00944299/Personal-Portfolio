@@ -1,0 +1,586 @@
+/* Landing page */
+
+position: relative;
+width: 963px;
+height: 604px;
+
+
+
+/* Group 2 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* images1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: url(images1.jpg);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 44.86%;
+right: 36.76%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 63.24%;
+right: 18.38%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 81.62%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* desktop */
+
+position: absolute;
+left: 2.28%;
+right: 88.47%;
+top: 3.15%;
+bottom: 86.75%;
+
+background: url(desktop.png);
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* images1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: url(images1.jpg);
+
+
+/* images1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: url(images1.jpg);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 44.86%;
+right: 36.76%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 63.24%;
+right: 18.38%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 81.62%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 81.62%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* desktop */
+
+position: absolute;
+left: 22.43%;
+right: 68.33%;
+top: 37.09%;
+bottom: 52.81%;
+
+background: url(desktop.png);
+
+
+/* HOME */
+
+position: absolute;
+left: 50.26%;
+right: 42.06%;
+top: 5.63%;
+bottom: 89.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #F6EB16;
+
+
+
+/* PROFILES */
+
+position: absolute;
+left: 66.77%;
+right: 21.81%;
+top: 5.63%;
+bottom: 89.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #F6EB16;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* images1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: url(images1.jpg);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+
+
+/* Rectangle */
+
+position: absolute;
+left: 44.86%;
+right: 36.76%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 63.24%;
+right: 18.38%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 81.62%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(196, 196, 196, 0.17);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* desktop */
+
+position: absolute;
+left: 2.28%;
+right: 88.47%;
+top: 3.15%;
+bottom: 86.75%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+left: 44.86%;
+right: 36.76%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 63.24%;
+right: 18.38%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 0%;
+right: 81.41%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* Rectangle */
+
+position: absolute;
+left: 81.62%;
+right: 0%;
+top: 0%;
+bottom: 83.77%;
+
+background: rgba(0, 63, 107, 0.8);
+border: 1px solid #000000;
+box-sizing: border-box;
+
+
+/* desktop */
+
+position: absolute;
+left: 22.43%;
+right: 68.33%;
+top: 37.09%;
+bottom: 52.81%;
+
+
+
+/* HOME */
+
+position: absolute;
+left: 50.26%;
+right: 42.06%;
+top: 5.63%;
+bottom: 89.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #F6EB16;
+
+
+
+/* LOGIN/ SIGN-UP */
+
+position: absolute;
+left: 85.98%;
+right: 4.36%;
+top: 4.14%;
+bottom: 88.41%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #F6EB16;
+
+
+
+/* PROFILES */
+
+position: absolute;
+left: 66.77%;
+right: 21.81%;
+top: 5.63%;
+bottom: 89.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #F6EB16;
+
+
+
+/* image */
+
+position: absolute;
+left: 3.74%;
+right: 86.4%;
+top: 2.48%;
+bottom: 86.75%;
+
+background: url(image.png);
+
+
+/* Bios of Professionals for the services you need */
+
+position: absolute;
+left: 33.98%;
+right: 18.15%;
+top: 34.6%;
+bottom: 48.51%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 36px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle */
+
+position: absolute;
+left: 31.67%;
+right: 30.53%;
+top: 57.45%;
+bottom: 22.1%;
+
+background: #F6EB16;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+
+/* Find Employee Professionals */
+
+position: absolute;
+left: 34.48%;
+right: 33.44%;
+top: 59.11%;
+bottom: 36.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Find Coaching Professionals */
+
+position: absolute;
+left: 34.68%;
+right: 33.64%;
+top: 71.36%;
+bottom: 23.84%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* SSO Login */
+
+position: absolute;
+left: 44.24%;
+right: 44.24%;
+top: 79.64%;
+bottom: 15.56%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* image 2 */
+
+position: absolute;
+left: 21.29%;
+right: 66.56%;
+top: 33.11%;
+bottom: 54.64%;
+
+background: url(image.png);

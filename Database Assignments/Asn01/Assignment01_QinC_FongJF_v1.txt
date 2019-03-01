@@ -1,0 +1,271 @@
+--  COMP 2714
+--  SET 2A
+--  Assignment Asn01
+--  Qin, Chris	A00944299	email: cqin8@my.bcit.ca
+--  Fong, Joe	A01054383	email: jfong80@my.bcit.ca
+
+SQL> ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD';
+
+Session altered.
+
+SQL> 
+SQL> SELECT SYSDATE
+  2  FROM DUAL;
+
+SYSDATE                                                                         
+----------                                                                      
+2019-01-11                                                                      
+
+SQL> 
+SQL> -- Question 1
+SQL> DROP TABLE OldBooking;
+
+Table dropped.
+
+SQL> DROP TABLE Booking;
+
+Table dropped.
+
+SQL> DROP TABLE Room;
+
+Table dropped.
+
+SQL> DROP TABLE Guest;
+
+Table dropped.
+
+SQL> DROP TABLE Hotel;
+
+Table dropped.
+
+SQL> 
+SQL> -- Question 2 (Question from 7.10)
+SQL> CREATE TABLE Hotel
+  2  (hotelNo          DECIMAL(3)          NOT NULL
+  3  ,hotelName        VARCHAR2(30)        NOT NULL
+  4  ,city             VARCHAR2(30)        NOT NULL
+  5  ,CONSTRAINT PK_Hotel
+  6    PRIMARY KEY (hotelNo)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Room
+  2  (roomNo           DECIMAL(3)          DEFAULT 1 NOT NULL
+  3  ,hotelNo          DECIMAL(3)          NOT NULL
+  4  ,type             VARCHAR2(10)        NOT NULL
+  5  ,price            DECIMAL(5, 2)       DEFAULT 10.00 NOT NULL
+  6  ,CONSTRAINT roomNumber
+  7    CHECK(roomNo BETWEEN 1 AND 100)
+  8  ,CONSTRAINT typeOfRoom
+  9    CHECK(type IN ('SINGLE', 'DOUBLE', 'FAMILY'))
+ 10  ,CONSTRAINT priceOfRoom
+ 11    CHECK(price BETWEEN 10.00 AND 100.00)
+ 12  ,CONSTRAINT PK_Room
+ 13    PRIMARY KEY (roomNo, hotelNo)
+ 14  ,CONSTRAINT FK_hotelNo
+ 15    FOREIGN KEY (hotelNo)
+ 16      REFERENCES Hotel (hotelNo)
+ 17  );
+
+Table created.
+
+SQL> 
+SQL> -- Question 3 (Question 7.11)
+SQL> CREATE TABLE Guest
+  2  (guestNo          VARCHAR2(10)        NOT NULL
+  3  ,guestName        VARCHAR2(30)        NOT NULL
+  4  ,guestAddress     VARCHAR2(50)        NOT NULL
+  5  ,CONSTRAINT PK_Guest
+  6    PRIMARY KEY (guestNo)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Booking
+  2  (hotelNo          DECIMAL(3)          NOT NULL
+  3  ,guestNo          VARCHAR2(10)        NOT NULL
+  4  ,dateFrom         DATE                NOT NULL
+  5  ,dateTo           DATE                NOT NULL
+  6  ,roomNo           DECIMAL(3)          DEFAULT 1 NOT NULL
+  7  ,CONSTRAINT PK_Booking
+  8    PRIMARY KEY (hotelNo, guestNo, dateFrom)
+  9  ,CONSTRAINT FK_HotelRoomNo
+ 10    FOREIGN KEY (roomNo, hotelNo)
+ 11      REFERENCES Room (roomNo, hotelNo)
+ 12  ,CONSTRAINT FK_GuestNo
+ 13    FOREIGN KEY (guestNo)
+ 14      REFERENCES Guest (guestNo)
+ 15  );
+
+Table created.
+
+SQL> 
+SQL> -- Question 4
+SQL> INSERT INTO Hotel
+  2    (hotelNo, hotelName, city)
+  3  VALUES
+  4    (145, '4 Seasons Hotel', 'Richmond');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    (hotelNo, hotelName, city)
+  3  VALUES
+  4    (110, 'Hyatt Downtown', 'Vancouver');
+
+1 row created.
+
+SQL> INSERT INTO Hotel
+  2    (hotelNo, hotelName, city)
+  3  VALUES
+  4    (93, 'Civic HighRise Hotel', 'Surrey');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Room
+  2    (roomNo, hotelNo, type, price)
+  3  VALUES
+  4    (14, 145, 'DOUBLE', 80.00);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    (roomNo, hotelNo, type, price)
+  3  VALUES
+  4    (96, 110, 'SINGLE', 40.00);
+
+1 row created.
+
+SQL> INSERT INTO Room
+  2    (roomNo, hotelNo, type, price)
+  3  VALUES
+  4    (50, 93, 'FAMILY', 100.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Guest
+  2    (guestNo, guestName, guestAddress)
+  3  VALUES
+  4    ('G09124812', 'John Smith', '123 Sunny Drive');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    (guestNo, guestName, guestAddress)
+  3  VALUES
+  4    ('G02118234', 'Mary Poppins', '185 Madeup Street');
+
+1 row created.
+
+SQL> INSERT INTO Guest
+  2    (guestNo, guestName, guestAddress)
+  3  VALUES
+  4    ('G05677307', 'Chris Qinner', '666 SomeEvil Street');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Booking
+  2    (hotelNo, guestNo, dateFrom, dateTo, roomNo)
+  3  VALUES
+  4    (145, 'G09124812', DATE'2019-01-23', DATE'2019-01-27', 14);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    (hotelNo, guestNo, dateFrom, dateTo, roomNo)
+  3  VALUES
+  4    (110, 'G02118234', DATE'2019-07-01', DATE'2019-08-01', 96);
+
+1 row created.
+
+SQL> INSERT INTO Booking
+  2    (hotelNo, guestNo, dateFrom, dateTo, roomNo)
+  3  VALUES
+  4    (93, 'G05677307', DATE'2019-03-18', DATE'2019-03-29', 50);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- Question 5.a
+SQL> ALTER TABLE Room
+  2    DROP CONSTRAINT typeOfRoom;
+
+Table altered.
+
+SQL> ALTER TABLE Room
+  2    ADD CONSTRAINT typeOfRoom
+  3      CHECK(type IN ('SINGLE', 'DOUBLE', 'FAMILY', 'DELUXE'));
+
+Table altered.
+
+SQL> 
+SQL> -- Question 5.b
+SQL> ALTER TABLE Room
+  2    ADD discount       DECIMAL(4,2)        DEFAULT 0 NOT NULL
+  3      CONSTRAINT discountedAmount
+  4        CHECK(discount BETWEEN 0 AND 30.00);
+
+Table altered.
+
+SQL> 
+SQL> -- Question 6.a
+SQL> UPDATE Room
+  2    SET price = price * 1.15
+  3    WHERE type = 'DOUBLE';
+
+1 row updated.
+
+SQL> 
+SQL> -- Question 6.b
+SQL> UPDATE Booking
+  2    SET dateFrom = DATE'2019-03-15'
+  3    WHERE guestNo = 'G05677307';
+
+1 row updated.
+
+SQL> UPDATE Booking
+  2    SET dateTo = DATE'2019-03-31'
+  3    WHERE guestNo = 'G05677307';
+
+1 row updated.
+
+SQL> 
+SQL> -- Question 7.a
+SQL> CREATE TABLE OldBooking
+  2  (hotelNo          DECIMAL(3)          NOT NULL
+  3  ,guestNo          VARCHAR2(10)        NOT NULL
+  4  ,dateFrom         DATE                NOT NULL
+  5  ,dateTo           DATE                NOT NULL
+  6  ,roomNo           DECIMAL(3)          DEFAULT 1 NOT NULL
+  7  );
+
+Table created.
+
+SQL> 
+SQL> -- Question 7.b
+SQL> INSERT INTO OldBooking
+  2    SELECT *
+  3    FROM Booking
+  4    WHERE dateTo < DATE'2019-01-10';
+
+0 rows created.
+
+SQL> 
+SQL> -- Question 7.c
+SQL> DELETE FROM Booking
+  2    WHERE dateTo < DATE'2019-01-10';
+
+0 rows deleted.
+
+SQL> 
+SQL> SPOOL OFF
